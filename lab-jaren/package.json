@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
-    "test": "./node_modules/mocha/bin/mocha ./server/test"
+    "test": "./node_modules/mocha/bin/mocha ./server/test",
+    "debug": "DEBUG=fireslog* npm run test"
   },
   "keywords": [],
   "author": "",
