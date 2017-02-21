@@ -32,4 +32,5 @@ app.use((err, req, res, next) => {
   if(err.status)
     return res.sendStatus(err.status);
   res.sendStatus(500);
+  next();
 });
