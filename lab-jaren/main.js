@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config();
-require('debug')('fireslog:main');
+const debug = require('debug')('fireslog:main');
 const server = require('./server');
 
 server.listen(process.env.PORT, () => {

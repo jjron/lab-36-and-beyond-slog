@@ -1,0 +1,41 @@
+$black: #000;
+$white: #fff;
+$pad: 1em;
+
+* {
+  position: static;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 2vw;
+  font-weight: normal;
+  line-height: 1em;
+  text-decoration: none;
+  color: $black;
+  &:focus {
+    outline: 0;
+  }
+  box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background-color: $white;
+  height: auto;
+  padding: $pad * 2;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: (7 - $i) * 0.3 * 1em;
+  }
+}
+
+ul, ol {
+  margin: 0 $pad;
+  list-style: none;
+}
