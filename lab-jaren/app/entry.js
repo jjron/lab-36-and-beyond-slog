@@ -1,12 +1,17 @@
 'use strict';
 
-require('./scss/base.scss');
+//require('./scss/base.scss');
 const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 angular.module('fireslog', [uiRouter])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.when('', '/admin');
+  $urlRouterProvider.when('', '/layout');
   let routes = [
+    {
+      name: 'layout',
+      url: '/layout',
+      template: '<layout></layout>',
+    },
     {
       name: 'admin',
       url: '/admin',
@@ -26,4 +31,4 @@ require('./service/admin-service.js');
 require('./container/admin');
 
 require('./component/login');
-//require('./component/layout');
+require('./component/layout');
