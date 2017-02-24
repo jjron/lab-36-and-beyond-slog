@@ -35,7 +35,7 @@ Page.findByIdAndDelete = function(id) {
 
 Page.prototype.validate = function() {
   debug('page validate');
-  if(!this.title || !this.content || !this.showInNav)
+  if(!this.title || !this.content)
     return Promise.reject(createError(400, 'missing a required property'));
   return Promise.resolve();
 };

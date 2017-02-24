@@ -3,7 +3,7 @@ require('angular').module('fireslog')
 .component('admin', {
   template: `
   <div class="admin">
-    <h1>Admin Login</h1>
+    <h1>admin login</h1>
     <login user="$ctrl.loginUser" handle-submit="$ctrl.loginHandleSubmit"></login>
   </div>`,
   controller: ['$log', 'authService', '$location', AdminController],
