@@ -10,9 +10,8 @@
   <button ng-click="$ctrl.handlePageNew()">NEW</button>
   <button ng-click="$ctrl.handlePageDelete($ctrl.pageSelectSelected)">DEL</button>
 
-  <div marked="ctrl.pageEditorPage.content">
-  </div>
-  
+  <div marked="$ctrl.pageEditorPage.content"> </div>
+
   <page-editor
     page="$ctrl.pageEditorPage"
     handle-submit="$ctrl.pageEditorHandleSubmit">
