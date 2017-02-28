@@ -10,8 +10,18 @@ const ngTouch = require('angular-touch');
 
 angular.module('fireslog', [uiRouter, ngMarked, ngClipboard.name, 'ngTouch', 'ngAnimate'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.when('', '/admin');
+  $urlRouterProvider.when('', '/home');
   let routes = [
+    {
+      name: 'home',
+      url: '/home',
+      template: '<home></home>',
+    },
+    {
+      name: 'homepage',
+      url: '/home/:id',
+      template: '<home></home>',
+    },
     {
       name: 'layout',
       url: '/layout',
@@ -34,10 +44,16 @@ angular.module('fireslog', [uiRouter, ngMarked, ngClipboard.name, 'ngTouch', 'ng
 require('./service/admin-service.js');
 require('./service/page-service.js');
 
+require('./filter/nav-filter');
+require('./filter/page-search-filter');
+
 require('./container/admin');
 require('./container/dashboard');
+require('./container/home');
 
 require('./component/login');
 require('./component/layout');
 require('./component/page-editor');
 require('./component/page-select');
+require('./component/page-searchbar');
+require('./component/navbar');
