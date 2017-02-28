@@ -1,0 +1,20 @@
+@import "../../scss/_theme.scss";
+
+.dashboard {
+  height: 100%;
+  background-color: $c-ucla;
+  .dashboard-btns {
+    button {
+      display: inline-block;
+      width: auto;
+      padding: $s-pad;
+    }
+  }
+  .page-preview {
+    height: 40%;
+    background:$c-white;
+  }
+  .page-editor {
+    height: 30%;
+  }
+}

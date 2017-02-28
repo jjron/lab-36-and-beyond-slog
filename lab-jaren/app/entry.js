@@ -4,7 +4,11 @@ require('./scss/main.scss');
 const angular = require('angular');
 const ngMarked = require('angular-marked');
 const uiRouter = require('angular-ui-router');
-angular.module('fireslog', [uiRouter, ngMarked])
+const ngClipboard = require('angular-clipboard');
+const ngAnimate = require('angular-animate');
+const ngTouch = require('angular-touch');
+
+angular.module('fireslog', [uiRouter, ngMarked, ngClipboard.name, 'ngTouch', 'ngAnimate'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('', '/admin');
   let routes = [

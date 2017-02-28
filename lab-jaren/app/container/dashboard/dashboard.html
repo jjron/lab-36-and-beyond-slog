@@ -1,5 +1,5 @@
 <div class="dashboard">
-  <h1>The Board of Dashing</h1>
+  <h1>Dashboard</h1>
   <page-select
     pages="$ctrl.pageSelectPages"
     show-all="$ctrl.pageSelectShowAll"
@@ -7,10 +7,13 @@
     handle-select="$ctrl.pageSelectHandleSelect">
   </page-select>
 
-  <button ng-click="$ctrl.handlePageNew()">NEW</button>
-  <button ng-click="$ctrl.handlePageDelete($ctrl.pageSelectSelected)">DEL</button>
+  <div class="dashboard-btns">
+    <button ng-click="$ctrl.handlePageNew()">NEW</button>
+    <button ng-click="$ctrl.handlePageDelete($ctrl.pageSelectSelected)">DEL</button>
+    <button ng-click="$ctrl.handlePageCopy($ctrl.pageSelectSelected)">COPY LINK</button>
+  </div>
 
-  <div marked="$ctrl.pageEditorPage.content"> </div>
+  <div class="page-preview" marked="$ctrl.pageEditorPage.content"> </div>
 
   <page-editor
     page="$ctrl.pageEditorPage"

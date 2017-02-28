@@ -42,5 +42,15 @@ function authService($log, $q, $window, $http) {
     });
   };
 
+  authService.logout = () => {
+    try {
+      delete $window.localStorage.token;
+      delete authService.token;
+      return $q.resolve();
+    } catch(err) {
+      return $q.reject(err);
+    }
+  };
+
   return authService;
 }

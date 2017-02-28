@@ -3,10 +3,24 @@
 .page-select {
   background: $c-greylight;
   padding: $s-pad;
+  ul, li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
   li {
     &:hover {
-      background-color: $c-grey;
+      background-color: $c-blue;
       color: $c-white;
     }
+  }
+
+  .ng-hide {
+    font-size: 0px;
+  }
+
+  .ng-hide-add,
+  .ng-hide-remove {
+    transition: all 500ms;
   }
 }
