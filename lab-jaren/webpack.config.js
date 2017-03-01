@@ -5,6 +5,9 @@ require('dotenv').config();
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractText = require('extract-text-webpack-plugin');
+const CleanPlugin = require('webpack-clean-plugin');
+
+let production = process.env.NODE_ENV === 'production';
 
 let plugins = [
   new HtmlPlugin({template: `${__dirname}/app/index.html`}),
@@ -14,15 +17,30 @@ let plugins = [
   }),
 ];
 
+let output = {
+  path: `${__dirname}/build`,
+  filename: 'bundle-[hash].js',
+};
+
+if(production) {
+  plugins = plugins.concat([
+    new CleanPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false,
+      },
+    }),
+  ]);
+  output.publicPath = 'https://d1g5sz2dx72prc.cloudfront.net';
+}
+
 module.exports = {
   plugins,
+  output,
   devtool: 'eval',
   devServer: { historyApiFallback: true },
   entry: `${__dirname}/app/entry.js`,
-  output: {
-    path: `${__dirname}/build`,
-    filename: 'bundle.js',
-  },
   module: {
     rules: [
       {
