@@ -1,54 +1,22 @@
-401 JS --  Lab 32 crud
-===
+# Lab-36 Firebase auth
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-duncan`
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-  
-## Learning Objectives  
-* Firebase Auth
+Firebase authentication differs from Mongo in that we don't need to create a user model or fleshed-out routes for signup and login. With Mongo, once a user signed up or logged in they would stay logged in and the token would be open for use by others to make requests. With Firebase once a token is generated the user is "logged out", meaning the token no longer persists in localStorage as it did with Mongo.
 
-## Resources  
-* [firebase admin sdk docs](https://firebase.google.com/docs/admin/setup)
-* [firebase sdk docs](https://firebase.google.com/docs/web/setup)
-
-## Requirements  
-#### Configuration  
-* **server/**
-* **server/lib**
-* **server/router**
-* **server/test**
-* **server/test/lib**
-* **server/index.js** -- inits and exports express app
-* **main.js** -- starts ther server/index.js
-* **package.json** 
-* **.gitignore** -- make sure you ignore the .env
-* **.env**
- 
-#### Feature Tasks  
-* Create a Project on Firebase
- * Enable `email/password` authorization
- * Add a user accoount
- * Set the database read permissions to true
-* create an .env file with all necessary private keys and info
-* create a server/index.js that exports your express app
-* create basic and bearer auth express middleware that use the firebase and firebase-admin sdks 
-* write test to login a a user
-
-####  Documentation  
-* Write how the working with firebase auth differs from using mongo
-
-#### Testing  
-* test GET /api/login with status of 200 and 401
-
-## Rubric  
-* 2ps Configuration
-* 3pts Feature Tasks
-* 3pts Tests
-* 2pts Documentation
-
-<!-- links --> 
+### Sass Doc
+- `::before` and `::after` pseudo-selectors insert content before or after the selected element
+- position
+  - `static` - default position value, elements display in order, top to bottom, first to last
+  - `relative` - allow offsets to top, bottom, left, right relative to the element's normal position
+  - `absolute` - allow offsets to top, bottom, left, right relative to the closest parent element with a `position: relative;`
+  - `fixed` - fixes the element's position in the viewport even when scrolling
+- display
+  - `inline`
+    - elements can be placed to the right and left of each other
+    - margin/padding: left and right, but not top or bottom
+    - no width or height value
+  - `block`
+    - elements take up 100% page width
+    - can set all margin/padding, width/height values
+  - `inline-block`
+    - elements can be placed to the right and left of each other
+    - can set all margin/padding, width/height values
